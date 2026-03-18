@@ -1,17 +1,43 @@
-# AUB-Chrome-Extension
-This Chrome extension gives easy remote access to publications for users at Aalborg University Library
+# Aalborg University Library Online Access Extension
 
-## Installation 
-To install:
+This browser extension provides Aalborg University (AAU) users with easy remote access to library publications by automatically redirecting them through the library proxy when available.
 
-1) Go to releases (https://github.com/jakobht/AUB-Chrome-Extension/releases)
-2) Download the crx file
-3) Go to chromes extensions (paste chrome://extensions/ to the address bar)
-4) Drag and drop the crx file to the extensions and accept the permissions
+The extension is compatible with **Google Chrome** and **Microsoft Edge** and is built using **Manifest V3**.
 
+## Features
+- **Automatic Proxy Check:** Queries the library API to see if the current page is supported for remote access.
+- **Seamless Redirection:** Automatically redirects to the proxied URL if access is confirmed.
+- **Smart Detection:** Skips checking if the page is already proxied (via `zorac.aub.aau.dk`) to avoid loops.
+- **Privacy First:** Only reads the URL of the active tab when the extension icon is clicked.
 
-## Use
-If you are on a page where AUB provides remote access simply click on the extension icon, and you will be send to the page where you can download the material. 
+## Installation for Developers
+Since modern browsers restrict manual installation of `.crx` files, follow these steps to load the extension locally:
+
+1.  **Download/Clone** this repository to your computer.
+2.  **Open Extension Settings:**
+    - **Chrome:** Go to `chrome://extensions/`
+    - **Edge:** Go to `edge://extensions/`
+3.  **Enable Developer Mode:** Toggle the switch in the top-right (Chrome) or bottom-left (Edge).
+4.  **Load Unpacked:**
+    - Click the **Load unpacked** button.
+    - Select the root directory of this project (the folder containing `manifest.json`).
+5.  The extension icon will now appear in your browser.
+
+## How to Use
+1.  Navigate to a research publication, journal article, or database (e.g., ScienceDirect, JSTOR, IEEE Xplore).
+2.  Click the **AUB Remote Access** extension icon.
+3.  The extension will check for access:
+    - If supported, you will be redirected to the AAU login page or directly to the proxied content.
+    - If not supported, the popup will display "Online access is not available for this site."
+    - If already proxied, it will inform you that "The page is already proxied via Aalborg University Library."
+
+## Official Distribution
+To distribute this extension officially to users, it must be submitted to the respective web stores:
+- **Chrome Web Store:** Requires a developer account and a ZIP of the source code.
+- **Microsoft Edge Add-ons:** Requires a Microsoft Partner account and a ZIP of the source code.
+
+*Note: The `.pem` private key file and the `.git` directory should never be included in the final distribution ZIP.*
 
 ## Credits
-Icon made by [icomoon](http://www.flaticon.com/authors/icomoon) from www.flaticon.com
+- **Icons:** Based on designs by [icomoon](http://www.flaticon.com/authors/icomoon) from [www.flaticon.com](http://www.flaticon.com).
+- **Service:** Powered by Aalborg University Library's proxy service.
