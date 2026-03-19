@@ -52,8 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(function (body) {
                 if (body && body.error == 1) {
-                    renderStatus("Error:\nUnable to contact API. Please try again later.")
+                    renderStatus("Error:\nUnable to contact API. Please try again later.", true);
+                    return;
                 }
+                
                 if (body && body.proxy == 1) {
                     renderStatus("Online access found. Redirecting...");
                     const newurl = 'https://login.zorac.aub.aau.dk/login?qurl=' + encodeURIComponent(url);
