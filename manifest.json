@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Aalborg University Library Online Access Checker",
     "short_name": "AAU Online",
-    "description": "This extension gives easy remote access to publications and databases for students and staff at Aalborg University Library. This is done by checking if the site is supported by the remove access proxy.",
+    "description": "This extension gives easy remote access to publications and databases for students and staff at Aalborg University Library.",
     "version": "2.0",
     "icons": {
         "16": "icon/library16.png",
