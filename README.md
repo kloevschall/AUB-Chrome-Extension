@@ -39,4 +39,5 @@ To distribute this extension officially to users, it must be submitted to the re
 *Note: The `.pem` private key file and the `.git` directory should never be included in the final distribution ZIP.*
 
 ## Credits
+- **Original developer**: Jakob Haahr Taankvist, https://github.com/jakobht/AUB-Chrome-Extension
 - **Service:** Powered by Aalborg University Library's proxy service.
