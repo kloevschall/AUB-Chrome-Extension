@@ -19,6 +19,6 @@
         "activeTab"
     ],
     "host_permissions": [
-        "https://content.aub.aau.dk/*"
+        "https://alma-services-1.aub.aau.dk/UmbracoSupporter/*"
     ]
 }

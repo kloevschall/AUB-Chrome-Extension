@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Properly encode the URL to handle special characters
-        const apiUrl = "https://content.aub.aau.dk/zorac/zoracjson.php?url=" + encodeURIComponent(url);
+        const apiUrl = "https://alma-services-1.aub.aau.dk/UmbracoSupporter/remote_access?qurl=" + encodeURIComponent(url);
         
         renderStatus('Looking up online access...');
 
@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(function (body) {
+                if (body && body.error == 1) {
+                    renderStatus("Error:\nUnable to contact API. Please try again later.")
+                }
                 if (body && body.proxy == 1) {
                     renderStatus("Online access found. Redirecting...");
                     const newurl = 'https://login.zorac.aub.aau.dk/login?qurl=' + encodeURIComponent(url);
